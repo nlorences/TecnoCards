@@ -1,0 +1,109 @@
+/* colores probar
+0F044C azul oscuro
+141E61 azul mas claro
+00909E 
+787A91 gris
+DAE1E7 gris mas claro
+EEEEEE claro
+
+*/
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* Style the sidebar - fixed full height */
+.sidebar {
+    height: 100%;
+    width: 15rem;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #222831;
+    overflow-x: hidden;
+    padding-top: 3rem;    
+  }
+  
+  /* Style sidebar links */
+  .linkNav {
+    padding: .8rem 2rem .8rem 2rem;
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: #F2A365;
+    display: block;
+  }
+  .logoNav {
+    width: 100%;
+    padding: .8rem 2rem .8rem 2rem;
+  }
+  
+ 
+  .linkNav:hover {
+    color: #ECECEC;
+    background-color: #333941;
+    
+  }
+  .title_container{
+    width: 100%;
+    height: 4rem;
+    background: #222831;
+    padding-left: 15rem;
+    position: fixed;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+  }
+  h1{
+    color: #DAE1E7;
+    text-align: center;
+
+    
+  }
+  main {
+    padding-left: 16rem;
+    padding-top: 5rem;
+  }
+  footer {
+    width: 100%;
+    height: 7rem;
+    position: fixed;
+    bottom: 0px;
+    background: #EEEEEE;
+    
+  }
+  .botonContainer{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    margin:10px;
+  }
+  .botones{
+    padding:5px;
+    background-color: #787A91 ;
+    font-size: 1.2rem;
+    color: #F2A365;
+    border-radius: 6%;
+    border: solid 3px black;
+    cursor:pointer;
+  }
+  .infoBoton{
+    font-size: 1.4rem;
+    color: blue;
+    background-color: transparent;
+    border: none;
+    margin-left: 10px;
+    cursor:pointer
+    
+  }
+
+
+  
+  
+  /* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar ul li a {font-size: 18px;}
+  }

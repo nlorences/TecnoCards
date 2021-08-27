@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link Style propio -->
+    <link rel="stylesheet" href="style/style.css">
+    <!-- Link Fontasesome -->
+    <script src="https://kit.fontawesome.com/a5d7378337.js" crossorigin="anonymous"></script>
+    <title>Tecno Cards</title>
+</head>
+<body>
+    <header>
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <ul>
+                <li>
+                    <a href="#"><img src="img/logo.png" class="logoNav" alt=""></a>
+                </li>
+                <li>
+                    <a href="#" class="linkNav"><i class="fa fa-fw fa-wrench"></i> Colección</a>
+                </li>
+                <li>
+                    <a href="#" class="linkNav"><i class="fa fa-fw fa-wrench"></i> Repetidas</a>
+                </li>
+                <li>
+                    <a href="#" class="linkNav"><i class="fa fa-fw fa-wrench"></i> Tienda</a>
+                </li>
+                <li>
+                    <a href="#" class="linkNav"><i class="fa fa-fw fa-envelope"></i> Contacto</a>
+                </li>
+            </ul>
+        </nav>
+    
+    <div class="title_container">
+    <h1>Tecno Cards</h1>
+    </div>
+</header>
+
+<main>
+    <div class="botonContainer">
+        <button class="botones"onclick="ordenarCartasAscendente()">Ordenar cartas de mas antiguas a más recientes</button>
+    </div>
+    <div class="botonContainer">
+        <button class="botones" onclick="ordenarCartasDescendente()">Ordenar cartas de mas recientes a más antiguas</button>
+    </div>
+        
+        
+    <div class="botonContainer">
+        <button class="botones" onclick="openPack(3)">Abrir pack bronce!!</button>
+        <button class="infoBoton" onclick="packs[0].packDetail()"><i class="fas fa-info-circle"></i></button>
+    </div>
+        
+    <div class="botonContainer">
+        <button class="botones" onclick="openPack(4)">Abrir pack plata!!</button>
+        <button class="infoBoton" onclick="packs[1].packDetail()"><i class="fas fa-info-circle"></i></button>
+    </div>
+
+    <div class="botonContainer">
+        <button class="botones" onclick="openPack(5)">Abrir pack oro!!</button>
+        <button class="infoBoton" onclick="packs[2].packDetail()"><i class="fas fa-info-circle"></i></button>
+    </div>
+        
+</main>
+    
+<footer>
+
+
+</footer>
+    <script src="js/pack.js"></script>
+    <script src="js/card.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
