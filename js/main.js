@@ -7,16 +7,16 @@ packs.push(new Pack(2,"Oro", 5, 450,"img/moneda_oro.png"));
 
 // Creacion array de las cartas
 const cards = [];
-cards.push(new Card(1,"Carta 1",2021));
-cards.push(new Card(2,"Carta 2",1999));
-cards.push(new Card(3,"Carta 3",1986));
-cards.push(new Card(4,"Carta 4",2021));
-cards.push(new Card(5,"Carta 5",2002));
-cards.push(new Card(6,"Carta 6",2006));
-cards.push(new Card(7,"Carta 7",1977));
-cards.push(new Card(8,"Carta 8",2000));
-cards.push(new Card(9,"Carta 9",2000));
-cards.push(new Card(10,"Carta 10",1994));
+cards.push(new Card(1,"Carta 1",2021,"img/mario_bross.png"));
+cards.push(new Card(2,"Carta 2",1999,"img/mario_bross.png"));
+cards.push(new Card(3,"Carta 3",1986,"img/mario_bross.png"));
+cards.push(new Card(4,"Carta 4",2021,"img/mario_bross.png"));
+cards.push(new Card(5,"Carta 5",2002,"img/mario_bross.png"));
+cards.push(new Card(6,"Carta 6",2006,"img/mario_bross.png"));
+cards.push(new Card(7,"Carta 7",1977,"img/mario_bross.png"));
+cards.push(new Card(8,"Carta 8",2000,"img/mario_bross.png"));
+cards.push(new Card(9,"Carta 9",2000,"img/mario_bross.png"));
+cards.push(new Card(10,"Carta 10",1994,"img/mario_bross.png"));
 
 // Variable para alcenar saldo y tomarlo del local storage
 let balance;
@@ -30,7 +30,7 @@ let sobre = [];
 // Funcion para validar saldo al inicio.
 function balanceCheck(){
     if(localStorage.getItem("balance") === null){
-        balance = 700;
+        balance = 1500;
     } else{
         balance = Number(localStorage.getItem("balance"));
     }
@@ -57,7 +57,7 @@ packs.forEach((pack) => {
 });
 document.getElementById("packs-venta").innerHTML = acumuladorPacks;
 
-//Funcion para armar packs al azar
+//Funcion para armar packs al azar y ordenar por numero.
 function randomCards(q){
      let cardsRandom = [];
     for(let i=0; i < q; i++){
@@ -65,15 +65,25 @@ function randomCards(q){
         cardsRandom.push(cards[r]);
         //TODO evitar repetidas
     }
+    ordenarCards(cardsRandom);
      return cardsRandom;
 }
-// Funcion para mostrar el contenido de pack mediante alert
+// Funcion para mostrar el contenido de pack en pantalla
 function mostrarCartas() {
-    let acumulador =``;
-    for(const card of sobre) {
-        acumulador += `${card.cardNumber} `;
-    }
-    alert(`Te tocaron las cartas ${acumulador}`);
+    let acumuladorCardSobre = ``;
+    sobre.forEach((card) => {
+        acumuladorCardSobre += `<div class="card">
+        <h3 class="card__title">${card.cardName}</h3>
+        <img class="card__img" src="${card.cardImg}" alt="">
+        <h4 class="card__number">${card.cardNumber}</h4>
+        </div>`
+    });
+    let cardsSobre =`<div class="card__container" > ${acumuladorCardSobre}
+    </div>
+    <button class="btnHome"><a class="btnHomeLink" href="index.html">Volver</a></button>`
+
+    document.getElementById("main").setAttribute('class', 'openPack');
+    document.getElementById("main").innerHTML = cardsSobre;
 }
 
 // Funcion para venta de packs.
@@ -88,6 +98,7 @@ function sellPack(packId){
         alert("Saldo insuficiente");
     }
 }
+
 balanceCheck();
 balanceUpdate();
 
@@ -99,12 +110,12 @@ balanceUpdate();
 // Funcion para almacenar las cartas en un array de coleccion.
 function pushToCollection(){
     cardsCollection = cardsCollection.concat(sobre);
-    ordenarCollection();
+    ordenarCards(cardsCollection);
     console.log(cardsCollection);
 }
 // Ordenar las cartas de la coleccion segun cardNumber
-function ordenarCollection(){ 
-    cardsCollection.sort(function(a,b){
+function ordenarCards(arr){ 
+    arr.sort(function(a,b){
         return a.cardNumber - b.cardNumber;
     });
 }
