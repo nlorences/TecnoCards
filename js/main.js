@@ -4,7 +4,6 @@ packs.push(new Pack(0,"Bronce", 3, 300, "img/moneda_bronce.png"));
 packs.push(new Pack(1,"Plata", 4, 380,"img/moneda_plata.png"));
 packs.push(new Pack(2,"Oro", 5, 450,"img/moneda_oro.png"));
 
-
 // Creacion array de las cartas
 const cards = [];
 cards.push(new Card(1,"Carta 1",2021,"img/mario_bross.png"));
@@ -21,26 +20,16 @@ cards.push(new Card(10,"Carta 10",1994,"img/mario_bross.png"));
 // Variable para alcenar saldo y tomarlo del local storage
 let balance;
 
-// TODO Array para todas las cartas obtenidas.
+// Array para todas las cartas obtenidas. (guarda solo los nro de carta)
 let cardsCollection = [];
 
 // Array para ultimo sobre abierto.
 let sobre = [];
 
-// Funcion para validar saldo al inicio.
-function balanceCheck(){
-    if(localStorage.getItem("balance") === null){
-        balance = 1500;
-    } else{
-        balance = Number(localStorage.getItem("balance"));
-    }
-}
-
 // Funcion para mostrar el saldo y guardarlo en localStorage
 function balanceUpdate(){
     document.getElementById("balance").innerHTML = `${balance} Cr.`;
-    localStorage.setItem("balance", balance);
-    
+    localStorage.setItem("balance", balance); 
 }
 
 //Creacion de los Packs en el Document.
@@ -93,44 +82,31 @@ function sellPack(packId){
         balanceUpdate();
         sobre = randomCards(packs[packId].cardsQ);
         pushToCollection();
-        mostrarCartas();
+        mostrarCartas();   
     } else{
         alert("Saldo insuficiente");
     }
 }
 
-balanceCheck();
-balanceUpdate();
-
-
-
-// Trabajando en esto.
-
-
-// Funcion para almacenar las cartas en un array de coleccion.
+// Funcion para almacenar las cartas en un array de coleccion y almacenar en local storage
 function pushToCollection(){
-    cardsCollection = cardsCollection.concat(sobre);
+    sobre.forEach((card) => {
+        cardsCollection.push(card.cardNumber);
+    });
+    localStorage.setItem("collection", JSON.stringify(cardsCollection));
     ordenarCards(cardsCollection);
     console.log(cardsCollection);
 }
-// Ordenar las cartas de la coleccion segun cardNumber
+// Ordenar las cartas segun cardNumber
 function ordenarCards(arr){ 
     arr.sort(function(a,b){
         return a.cardNumber - b.cardNumber;
     });
 }
 
+//Validacion del saldo
+balance = Number(localStorage.getItem("balance")) || 1500;
+// Validacion de coleccion
+cardsCollection = JSON.parse(localStorage.getItem("collection")) || [];
 
-
-// Codigo sin uso actualmente que puede ser de utilidad.
-
-function ordenarCartasDescendente(){
-    cards.sort(function(a,b){
-        return  b.cardYear - a.cardYear;
-    });
-    console.log(cards);
-    alert("Ver consola 😃");
-}
-
-
-
+balanceUpdate();
