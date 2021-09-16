@@ -41,12 +41,12 @@ function validacionInicial(){
 
 function logOut(){
     localStorage.removeItem("username");
-    window.location.replace("../index.html");
+    location.reload();
 }
 function reset(){
     localStorage.setItem("balance", startBalance);
     localStorage.removeItem("collection");
-    window.location.replace("../index.html");
+    location.reload();
 }
 // Funcion para mostrar el saldo y guardarlo en localStorage
 function balanceUpdate(){
