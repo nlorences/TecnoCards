@@ -9,7 +9,7 @@
         <title>Gaming Cards</title>
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
@@ -17,7 +17,7 @@
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="/pages/collection.html">Gaming Cards</a>
+            <a class="navbar-brand ps-3" href="../pages/collection.html">Gaming Cards</a>
             <div class="balance">
                 <div class="balance__text">Saldo</div>
                 <div class="balance__number" id="balance">
@@ -32,23 +32,23 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading"></div>
-                            <a class="nav-link" href="/pages/collection.html">
+                            <a class="nav-link" href="../pages/collection.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 Colección
                             </a>
-                            <a class="nav-link" href="/pages/packs.html">
+                            <a class="nav-link" href="../pages/packs.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Packs
                             </a>
-                            <a class="nav-link" href="/pages/change.html">
+                            <a class="nav-link" href="../pages/change.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Repetidas
                             </a>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="../index.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-user-tie"></i></div>
                                 Perfil
                             </a>
-                            <a class="nav-link" href="/pages/contact.html">
+                            <a class="nav-link" href="../pages/contact.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Contacto
                             </a>
@@ -57,19 +57,15 @@
                     <div class="sb-sidenav-footer" id="login_info"></div>
                 </nav>
             </div>
-            <div id="layoutSidenav_content" class="indexMain">
-                <div class="login__container" id="index_content">
+            <div id="layoutSidenav_content">
 
-                    <form>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Ingresa tu usuario</label>
-                            <input type="text" class="form-control" id="user-name" aria-describedby="usuario">
-                        </div>
-                        <button onclick="signIn()" class="btn btn-primary">Login</button>
-                    </form>
+                <main id="main"> 
+                    <h1>EN CONSTRUCCION</h1>
                     
-                </div>
-                
+
+
+                </main>
+                    
                     
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
@@ -84,14 +80,14 @@
         </div>
         <!-- Scrips externos -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/navscripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="../js/navscripts.js"></script>
         <!-- Scripts Propios -->
-        <script src="js/pack.js"></script>
-        <script src="js/card.js"></script>
-        <script src="js/main.js"></script>
-        <script src="/js/index.js"defer></script>
+        <script src="../js/pack.js"></script>
+        <script src="../js/card.js"></script>
+        <script src="../js/main.js"></script>
+        <script src="../js/collectionPage.js" defer></script>
 
     </body>
 </html>
