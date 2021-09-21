@@ -13,7 +13,7 @@ if(userName) {
 //Validacion del saldo
 balance = Number(localStorage.getItem("balance")) || startBalance;
 // Validacion de coleccion
-cardsCollection = JSON.parse(localStorage.getItem("collection")) || [];
+cardsCollection = JSON.parse(localStorage.getItem("collection")) || startCollection();
 
 balanceUpdate();
 

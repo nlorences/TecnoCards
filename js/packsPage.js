@@ -14,3 +14,10 @@ packs.forEach((pack) => {
 });
 document.getElementById("packs-venta").innerHTML = acumuladorPacks;
 
+$(".pack__img").animate({ 
+                    width:"80%"},
+                750)
+                .delay(50)
+                .animate({ 
+                    width:"70%"},
+                750)

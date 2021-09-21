@@ -1,40 +1,46 @@
 validacionInicial();
-armarColeccion();
 
 // Muestra la coleccion.
 let acumuladorCollection =``;
-for( let i = 0; i < album.length; i++){
-    if( album[i] !== 0){
-        acumuladorCollection += 
-        `<div class="col mb-5">
-            <div class="card h-100">
+for( let i = 0; i < cardsCollection.length; i++){
+    if( cardsCollection[i] !== 0){
+        acumuladorCollection +=
+            `<div class="card card-${cards[i].cardNumber}">
+                <!-- card name-->
+                <h5 class="fw-bolder">${cards[i].cardName}</h5>
                 <!-- card image-->
                 <img class="card-img-top" src="${cards[i].cardImg}">
-                <!-- card details-->
-                <div class="card-body p-4">
-                    <div class="text-center">
-                        <!-- card name-->
-                        <h5 class="fw-bolder">${cards[i].cardName}</h5>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="text-center">
-                        <!-- card number-->
-                        <h5 class="fw-bolder">${cards[i].cardNumber}</h5>
-                    </div>
-                </div>
-            </div>
-        </div>`;
+                <!-- card number-->
+                <h5>Nro. ${cards[i].cardNumber}</h5>
+            </div>`;
     } else{
-        acumuladorCollection += 
-            `<div class="col mb-5">
-                <div class="card h-100">
-                    <div class="card-vacia">
-                    <h5 class="fw-bolder text-center"> ${cards[i].cardNumber} </h5>
-                    </div>
+        acumuladorCollection +=
+            `<div class="card">
+                <div class="card-vacia">
+                <h5 class="fw-bolder"> ${cards[i].cardNumber}</h5>
                 </div>
             </div>`;
     }
 };
 
 $("#collection").html(acumuladorCollection);
+
+
+/******** TRABAJANDO EN ESTO.
+ 
+ for( let i = 0; i < cardsCollection.length; i++){
+     let animacion = $(`.card-${i+1}`);
+     
+     
+     animacion.hover(function(e){
+         e.preventDefault();
+         animacion.html("hola");
+         animacion.animate({
+             opacity: .4,
+             color: "red",
+             
+            },
+            1500)})
+            
+        }
+        ***************/
