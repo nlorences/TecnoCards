@@ -17,6 +17,12 @@ cards.push(new Card(8,"Carta 8",2000,"../img/mario_bross.png","", 150));
 cards.push(new Card(9,"Carta 9",2000,"../img/mario_bross.png","", 50));
 cards.push(new Card(10,"Carta 10",1994,"../img/mario_bross.png","", 50));
 
+
+
+
+ 
+
+
 let userName;
 // Variable para alcenar saldo y tomarlo del local storage
 let balance;
@@ -120,3 +126,4 @@ function ordenarCards(arr){
         return a.cardNumber - b.cardNumber;
     });
 }
+

@@ -1,5 +1,5 @@
 validacionInicial();
-
+console.log(cards);
 // Muestra la coleccion.
 let acumuladorCollection =``;
 for( let i = 0; i < cardsCollection.length; i++){
@@ -44,3 +44,4 @@ $("#collection").html(acumuladorCollection);
             
         }
         ***************/
+
